@@ -25,13 +25,10 @@ int e_resistance(float orig_resistance, float *res_array)
 			
 			if(orig_resistance >= (e12[i] * length)) {
 
-				if(orig_resistance - (e12[i] * length) >= 1.0 || (orig_resistance - (e12[i] * length)) == 0.0)
-				{
-					res_array[count] = e12[i] * length;
-					orig_resistance -= e12[i] * length;
+				res_array[count] = e12[i] * length;
+				orig_resistance -= e12[i] * length;
 
-					break;
-				}
+				break;
 			}
 
 		}
