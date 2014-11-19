@@ -2,6 +2,8 @@
 #define NULL 0
 #endif
 
+#include "libresistance.h"
+
 float calc_resistance(int count, char conn, float *array)
 {
 
@@ -46,28 +48,28 @@ float calc_resistance(int count, char conn, float *array)
 				i++;
 			}
 
+	                /*
+				Eftersom formeln är:
+                	         1      1     1     1
+        	                 -  =   -  +  -  +  -
+	                        RES    R_1   R_2   R_N
+
+	                        Blir resistansen:
+
+                	         1
+        	                 -  = RESULTAT
+	                        RES
+
+	                        1 = RESULTAT * RES
+
+	                        RES = 1 / RESULTAT
+
+	                */
+
+			return (1/resistance);
+
                 }
 
-		/*
-
-			Eftersom formeln är:
-			 1      1     1     1
-			 -  =   -  +  -  +  -
-			RES    R_1   R_2   R_N
-
-			Blir resistansen:
-
-			 1
-			 -  = RESULTAT
-			RES
-
-			1 = RESULTAT * RES
-
-			RES = 1 / RESULTAT
-
-		*/
-
-                return (1/resistance);
         }
 
         return -1;
