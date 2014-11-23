@@ -18,9 +18,6 @@ int e_resistance(float orig_resistance, float *res_array)
 			length = pow(10, (int) log10(orig_resistance));	
 		}
 		
-		printf("SIZE: %d\n", length);
-		printf("ORIG: %f\n", orig_resistance);
-
 		for(int i = (sizeof(e12) / sizeof(float)) - 1; i >= 0; i--) {
 			
 			if(orig_resistance >= (e12[i] * length)) {
