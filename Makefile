@@ -46,7 +46,7 @@ uninstall:
 	sudo rm $(Librarypath)libresistance.so
 
 clean:
-	rm -rf obj/*o lib/* $(Output)
+	rm -rf obj lib $(Output)
 
 .PHONY: all main install uninstall clean
 
