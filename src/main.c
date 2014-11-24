@@ -28,8 +28,9 @@ int main()
 		scanf("%f", &components[i]);
 		i++;
 	}
-
-
-
+	float resultRes = calc_resistance(componentCount,conn,components);
+	printf("Ersättningsresistans:%f\n",resultRes);
+	float power = calc_power_r (current,resultRes);
+	printf("Effektutveckling:%f\n",power);
 	return 0;
 }
