@@ -12,7 +12,7 @@ all: main
 
 
 main: lib 
-	$(CC) $(CFlags) src/main.c -o $(Output) -L lib/ -l power -l component -l resistance
+	$(CC) $(CFlags) src/main.c -o $(Output) -L lib/ -l power -l component -l resistance $(MathFlag)
 
 lib: libresistance libpower libcomponent
 	export LD_LIBRARY_PATH=./lib:$LD_LIBRARY_PATH
