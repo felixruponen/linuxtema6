@@ -28,6 +28,7 @@ int main()
 		scanf("%f", &components[i]);
 		i++;
 	}
+
 	float resultRes = calc_resistance(componentCount,conn,components);
 	printf("Ersättningsresistans: %.0f Ohm\n", resultRes);
 
@@ -54,6 +55,7 @@ int main()
 	}
 
 	printf("\n");
+	free(components);
 
 	return 0;
 }
