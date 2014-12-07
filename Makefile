@@ -19,19 +19,19 @@ lib: libresistance libpower libcomponent
 libresistance:
 	mkdir -p obj/
 	mkdir -p lib/
-	$(CC) -c src/libresistance/libresistance.c -I src/libresistance/ -o obj/libresistance.o $(MathFlag) $(CFlags)
+	$(CC) -c $(LibFlags) src/libresistance/libresistance.c -I src/libresistance/ -o obj/libresistance.o $(MathFlag) $(CFlags)
 	$(CC) $(LibFlags) -shared obj/libresistance.o -o lib/libresistance.so
 
 libpower:
 	mkdir -p obj/
 	mkdir -p lib/
-	$(CC) -c src/libpower/libpower.c -I src/libpower/ -o obj/libpower.o $(CFlags)
+	$(CC) -c $(LibFlags) src/libpower/libpower.c -I src/libpower/ -o obj/libpower.o $(CFlags)
 	$(CC) $(LibFlags) -shared obj/libpower.o -o lib/libpower.so
 
 libcomponent:
 	mkdir -p obj/
 	mkdir -p lib/
-	$(CC) -c src/libcomponent/libcomponent.c -o obj/libcomponent.o -fPIC $(MathFlag) $(CFlags) 
+	$(CC) -c $(LibFlags) src/libcomponent/libcomponent.c -o obj/libcomponent.o $(MathFlag) $(CFlags) 
 	$(CC) $(LibFlags) -shared obj/libcomponent.o -o lib/libcomponent.so
 
 install:
