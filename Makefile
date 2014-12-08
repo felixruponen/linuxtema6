@@ -11,7 +11,7 @@ Librarypath = /usr/lib/
 all: main
 
 main: lib 
-	$(CC) $(CFlags) src/main.c -o $(Output) -L lib/ -l power -l component -l resistance $(MathFlag) -Wl,-rpath,./lib/,-rpath,$(Librarypath)
+	$(CC) $(CFlags) src/main.c -o $(Output) -L lib/ -l power -l component -l resistance $(MathFlag) -Wl,-rpath,./lib/
 
 lib: libresistance libpower libcomponent
 	export LD_LIBRARY_PATH=./lib:$LD_LIBRARY_PATH
